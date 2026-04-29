@@ -56,8 +56,8 @@ const Resume= () =>{
                     <span className={"text-gray-800 text-sm font-semibold"}>Back to Homepage</span>
                 </Link>
             </nav>
-            <div className={"flex flex-row w-full max-lg:flex-col-reverse"}>
-                <section className={"feedback-section bg-[url('/images/bg-small.svg/')] bg-cover h-[100vh] sticky top-0 items-center justify-center"}>
+            <div className={"grid grid-cols-[1fr_2fr] w-full max-lg:flex max-lg:flex-col-reverse"}>
+                <section className={"feedback-section w-full bg-[url('/images/bg-small.svg/')] bg-cover h-[100vh] sticky top-0 items-center justify-center"}>
                     {imageUrl && resumeUrl && (
                         <div className={" animate-in fade-in duration-1000 gradient-border max-smm-0 h-[90%] max-wxl:h-fit w-fit"}>
                             <a href={resumeUrl} target={"_blank"} rel={"noopener noreferrer"}>
@@ -71,12 +71,12 @@ const Resume= () =>{
                     )}
 
                 </section>
-                <section className={"feedback-section"}>
+                <section className={"feedback-section w-full"}>
                     <h2 className={"text-4xl !text-black font-bold"}> Resume Review</h2>
                     {feedback ?(
                         <div className={"flex flex-col gap-8 animate-in fade-in duration-1000"}>
                             <Summary feedback={feedback} />
-                            <ATS score={feedback.ATS.score || 0} suggestiond={feedback.ATS.tips || []} />
+                            <ATS score={feedback.ATS.score || 0} suggestions={feedback.ATS.tips || []} />
                             <Details feedback={feedback}/>
 
                         </div>
